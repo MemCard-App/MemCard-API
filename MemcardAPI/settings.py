@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4mm$k*11_%d!rl@@m+039oyy)tcy)6w&1kdlh^b_h8x5bgitz$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['memcard-api.herokuapp.com']
+ALLOWED_HOSTS = ['mempi.herokuapp.com', '127.0.0.1', '0.0.0.0', 'localhost']
 
 
 # Application definition
