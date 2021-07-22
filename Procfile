@@ -1,1 +1,1 @@
-web:gunicorn MemcardAPI.wsgi 
+web: gunicorn MemcardAPI.wsgi 
