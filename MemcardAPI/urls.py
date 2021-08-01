@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
+from memcard.views import signup, ThankView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('memcard.api.urls')),
     path('api/rest-auth/', include('rest_auth.urls')),
+    path('signup/', signup, name='signup'),
+    path('thanks/', ThankView.as_view(), name='thanks'),
     path('api/rest-auth/registration/', include('rest_auth.registration.urls'))
 ]

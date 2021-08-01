@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Memcard - Registration Form</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body class="override">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">MemCard</a>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/signup">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <form action="{% url 'signup' %}" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Register</div>
+                            <div class="panel-body">
+                                {% if error_message %}
+                                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                                {% endif %}
+            
+                                <div class="form-group clearfix">
+                                    <label for="{{ form.username.id_for_label }}"
+                                        class="col-md-4 control-label text-right">Name<span class="text-red">*</span>:</label>
+                                    <div class="col-md-6">
+                                        {{ form.username }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="{{ form.email.id_for_label }}" class="col-md-4 control-label text-right">Email<span
+                                            class="text-red">*</span>:</label>
+                                    <div class="col-md-6">
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label for="{{ form.password.id_for_label }}"
+                                        class="col-md-4 control-label text-right">Password<span class="text-red">*</span>:</label>
+                                    <div class="col-md-6">
+                                        {{ form.password }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-md-offset-4">
+                                    <input type="submit" value="Register" class="btn btn-success">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row well ml-t">
+                <div class="col-lg-8 col-md-8">
+                    <h4>Developed by: <a href="https://sblip.dev" target="_blank">Shaurya Pratap Singh</a>
+                    </h4>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <p class="m-t">Copyright &copy <a href="https://sblip.dev"
+                            target="_blank">www.sblip.dev</a> 2021</p>
+                    <p>All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
